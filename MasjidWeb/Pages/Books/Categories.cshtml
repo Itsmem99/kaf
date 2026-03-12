@@ -1,0 +1,89 @@
+﻿@page
+@model kaf.Pages.Books.CategoriesModel
+
+<h1 class="text-center mb-4">📚 التصنيفات</h1>
+
+<!-- أزرار التصنيفات -->
+<div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+    <button class="btn btn-outline-pink active" data-filter="all">الكل</button>
+    <button class="btn btn-outline-pink" data-filter="thoughts">خواطر</button>
+    <button class="btn btn-outline-pink" data-filter="feelings">شعور</button>
+    <button class="btn btn-outline-pink" data-filter="human">إنساني</button>
+    <button class="btn btn-outline-pink" data-filter="novel">رواية</button>
+</div>
+
+<!-- قائمة الكتب -->
+<div class="row" id="booksContainer">
+
+    <!-- كتاب 1 -->
+    <div class="col-md-4 mb-4 book-item thoughts feelings">
+        <div class="card book-card h-100 text-center">
+            <img src="~/images/book-cover.jpg" class="card-img-top book-img" />
+            <div class="card-body">
+                <h5>ما أحد قال لي كذا</h5>
+                <p class="text-muted">خواطر • شعور</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- كتاب 2 -->
+    <div class="col-md-4 mb-4 book-item feelings human">
+        <div class="card book-card h-100 text-center coming-soon">
+            <img src="~/images/2.png" class="card-img-top book-img" />
+            <div class="card-body">
+                <h5>الشفاء بعد علاقة مؤلمة…</h5>
+                <p class="text-muted">شعور • تعافي • علاقات</p>
+                <span class="badge book-badge">قريبًا</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- كتاب 3 -->
+    <div class="col-md-4 mb-4 book-item novel human">
+        <div class="card book-card h-100 text-center">
+            <img src="~/images/3.jpg" class="card-img-top book-img" />
+            <div class="card-body">
+                <h5>المدينة التي لا تناديني باسمي</h5>
+                <p class="text-muted">رواية • إنساني • غربة</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- كتاب 4 -->
+    <div class="col-md-4 mb-4 book-item novel human thoughts coming-soon">
+        <div class="card book-card h-100 text-center">
+            <img src="~/images/4.jpg" class="card-img-top book-img" />
+            <div class="card-body">
+                <h5>القهوة التي لا تُشرب وحدها</h5>
+                <p class="text-muted">رواية • طفولة • حب • تقاليد</p>
+                <span class="badge book-badge">قريبًا</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript الفلترة (ضروري) -->
+<script>
+    const buttons = document.querySelectorAll("[data-filter]");
+    const books = document.querySelectorAll(".book-item");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            // تغيير الزر النشط
+            buttons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.getAttribute("data-filter");
+
+            books.forEach(book => {
+                if (filter === "all" || book.classList.contains(filter)) {
+                    book.style.display = "block";
+                } else {
+                    book.style.display = "none";
+                }
+            });
+        });
+    });
+</script>

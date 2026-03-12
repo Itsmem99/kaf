@@ -1,0 +1,16 @@
+﻿<div class="quote-box text-center mb-5">
+    <p id="dailyQuote"></p>
+</div>
+
+<script>
+    const quotes = [
+        "أحيانًا ننجو… فقط لأننا تعوّدنا.",
+        "ليس كل صمت هدوء، بعضه تعب.",
+        "نحن لا ننسى… نحن فقط نتأقلم.",
+        "الغربة لا تُقاس بالمكان، بل بالشعور.",
+        "القلب يتعب قبل الجسد بكثير."
+    ];
+
+    const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("dailyQuote").innerText = `🪞 ${todayQuote}`;
+</script>

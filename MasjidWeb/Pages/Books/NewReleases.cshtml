@@ -1,0 +1,121 @@
+﻿@page
+@model kaf.Pages.Books.NewReleasesModel
+
+<h2 class="text-center mb-4">✨ الإصدارات الجديدة</h2>
+
+<p class="text-center mb-5 text-muted">
+    هنا أحدث ما كُتب…
+    كلمات جديدة، لكنها تحمل إحساسًا قديمًا مرّ بك من قبل.
+</p>
+
+<div class="row justify-content-center">
+
+    <!-- كتاب 1 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card book-card h-100 text-center">
+            <img src="~/images/book-cover.jpg" class="card-img-top book-img"
+                 alt="غلاف كتاب ما أحد قال لي كذا" />
+
+            <div class="card-body">
+                <h5 class="book-title">ما أحد قال لي كذا</h5>
+
+                <p class="book-desc">
+                    كتاب شعوري قصير، يُقال فيه ما لم يُقال سابقًا،
+                    لمن احتاج كلمة واحدة فقط… ليطمئن.
+                </p>
+
+                <p class="book-date">📅 ديسمبر 2025</p>
+                <p class="fw-bold text-pink">💰 السعر: 4 دولار</p>
+
+                <a asp-page="/Books/Details" class="btn btn-pink mb-2">
+                    التفاصيل ✨
+                </a>
+
+                <a href="https://mahalia5.gumroad.com/l/slqtcz"
+                   target="_blank"
+                   class="btn btn-outline-pink w-100">
+                    🛒 احصل على الكتاب
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- كتاب 2 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card book-card h-100 text-center">
+            <img src="~/images/2.png"
+                 class="card-img-top book-img"
+                 alt="غلاف الشفاء بعد علاقة مؤلمة" />
+
+            <div class="card-body">
+                <h5 class="book-title">الشفاء بعد علاقة مؤلمة…</h5>
+
+                <p class="book-desc">
+                    كتاب عن التعافي بعد الفقد،
+                    وعن استعادة الذات خطوة بخطوة
+                    بعد علاقة تركت أثرًا.
+                </p>
+
+                <p class="book-date">📘 متوفر الآن</p>
+                <p class="fw-bold text-pink">💰 السعر: 6 دولار</p>
+
+                <a href="https://mahalia5.gumroad.com/l/hckrnd"
+                   target="_blank"
+                   class="btn btn-outline-pink w-100">
+                    🛒 احصل على الكتاب
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- كتاب 3 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card book-card h-100 text-center">
+            <img src="~/images/4.jpg" class="card-img-top book-img"
+                 alt="غلاف القهوة التي لا تُشرب وحدها" />
+
+            <div class="card-body">
+                <h5 class="book-title">القهوة التي لا تُشرب وحدها</h5>
+
+                <p class="book-desc">
+                    كتاب عن التقاليد الإريترية،
+                    الذاكرة، والقهوة كطقس إنساني لا يُشرب وحيدًا.
+                </p>
+
+                <p class="fw-bold text-pink">💰 السعر: 8 دولار</p>
+
+                <a href="https://mahalia5.gumroad.com/l/ericoffe"
+                   target="_blank"
+                   class="btn btn-outline-pink w-100">
+                    🛒 احصل على الكتاب
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- كتاب 4 -->
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card book-card h-100 text-center coming-soon">
+            <img src="~/images/3.jpg" class="card-img-top book-img"
+                 alt="غلاف المدينة التي لا تناديني باسمي" />
+
+            <div class="card-body">
+                <h5 class="book-title">المدينة التي لا تناديني باسمي…</h5>
+
+                <p class="book-desc">
+                    رواية إنسانية عن الغربة،
+                    والبحث عن الذات في مكان لا يشبهك.
+                </p>
+
+                <span class="badge book-badge mb-2">
+                    إصدار قادم • 10 دولار
+                </span>
+
+                <p class="text-muted">
+                    تستحق السعر… أعدك 🤍
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

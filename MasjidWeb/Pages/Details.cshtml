@@ -1,0 +1,49 @@
+﻿@page
+@model kaf.Pages.DetailsModel
+@{
+}
+<h2>ما أحد قال لي كذا</h2>
+
+<p class="text-muted">
+    بقلم: Maha Khlaifa <br />
+    📅 27 / 12 / 2025
+</p>
+
+<p>
+    هذا الكتاب كُتب لمن شعروا كثيرًا،
+    ولم يجدوا من يشرح لهم أن شعورهم طبيعي.
+    هو ليس دليل حياة،
+    بل كتف تميل عليه.
+</p>
+
+<p>
+    كل صفحة فيه تقول شيئًا
+    كنت أتمنى أن أسمعه في وقتٍ سابق.
+</p>
+<h5>هذا الكتاب لك إذا:</h5>
+<ul>
+    <li>تحب الكتب الشعورية</li>
+    <li>مررت بفترات صمت طويلة</li>
+    <li>تبحث عن كلمات تفهمك</li>
+</ul>
+<blockquote>
+    “أحيانًا لا نحتاج حلًا،
+    نحتاج فقط أن يقول أحد: أنا فاهمك.”
+</blockquote>
+<div class="comments-section">
+
+    <h3>
+        💬 تعليقات القرّاء
+        (<span id="commentCount">0</span>)
+    </h3>
+
+    <textarea id="commentInput"
+              placeholder="اكتب شعورك أو تعليقك هنا..."></textarea>
+
+    <button class="btn btn-pink mt-3" onclick="addComment()">
+        إرسال ✨
+    </button>
+
+    <div id="commentsList" class="mt-4"></div>
+
+</div>

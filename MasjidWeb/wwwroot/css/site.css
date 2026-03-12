@@ -1,0 +1,288 @@
+﻿/* =========================
+   🤖 AI HERO
+========================= */
+.ai-hero {
+    text-align: center;
+    margin: 120px 0;
+    position: relative; /* أساس الفقاعة */
+}
+
+/* =========================
+   🤖 Robot Head
+========================= */
+.robot-head {
+    width: 320px;
+    height: 270px;
+    background: linear-gradient(145deg, #ffe3f1, #ffb3d9);
+    border-radius: 55px;
+    margin: 0 auto 40px;
+    position: relative;
+    box-shadow: 0 0 60px rgba(214, 51, 132, 0.7), inset 0 0 40px rgba(255,255,255,0.9);
+    animation: floatRobot 4s ease-in-out infinite;
+}
+
+/* ✨ Glow */
+.robot-glow {
+    position: absolute;
+    inset: -35px;
+    background: radial-gradient(circle, rgba(255,126,179,0.45), transparent 70%);
+    filter: blur(35px);
+    z-index: -1;
+}
+
+/* =========================
+   👁 Eyes
+========================= */
+.robot-eye {
+    width: 34px;
+    height: 34px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 95px;
+    box-shadow: 0 0 25px white;
+}
+
+    .robot-eye.left {
+        left: 85px;
+    }
+
+    .robot-eye.right {
+        right: 85px;
+    }
+
+/* =========================
+   👄 Mouth
+========================= */
+.robot-mouth {
+    width: 95px;
+    height: 10px;
+    background: linear-gradient(90deg, #c2185b, #ff7eb3);
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    box-shadow: 0 0 18px rgba(214, 51, 132, 0.9);
+}
+
+/* =========================
+   🫧 Quote Bubble (من فم الروبوت)
+========================= */
+.quote-bubble {
+    position: absolute;
+    top: 210px; /* قريب من الفم */
+    left: 50%;
+    transform: translateX(-50%) translateY(20px) scale(0.6);
+    background: rgba(255, 192, 203, 0.25);
+    padding: 18px 24px;
+    border-radius: 26px;
+    box-shadow: 0 12px 30px rgba(214, 51, 132, 0.25);
+    opacity: 0;
+    transition: all 0.8s ease;
+    max-width: 260px;
+    z-index: 5;
+}
+
+    /* ذيل الفقاعة */
+    .quote-bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 14px;
+        height: 14px;
+        background: rgba(255, 192, 203, 0.25);
+    }
+
+    /* النص داخل الفقاعة */
+    .quote-bubble p {
+        margin: 0;
+        color: #d63384;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    /* الحالة الظاهرة */
+    .quote-bubble.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-15px) scale(1);
+    }
+
+/* =========================
+   🧠 AI Text
+========================= */
+.ai-title {
+    color: #c2185b;
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(214, 51, 132, 0.4);
+}
+
+.ai-subtitle {
+    color: #777;
+    font-size: 1.2rem;
+}
+
+/* =========================
+   🤖 Floating Animation
+========================= */
+@keyframes floatRobot {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-22px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   🔥 Navbar on top
+========================= */
+header,
+.navbar {
+    position: relative;
+    z-index: 9999;
+}
+
+/* =========================
+   💗 Buttons
+========================= */
+.btn-pink {
+    background-color: #ffb6c1;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+}
+
+    .btn-pink:hover {
+        background-color: #ff8fa3;
+    }
+
+.btn-outline-pink {
+    border: 1px solid #e4a1b5;
+    color: #c94f7c;
+    background: transparent;
+}
+
+    .btn-outline-pink.active,
+    .btn-outline-pink:hover {
+        background-color: #c94f7c;
+        color: white;
+    }
+
+/* =========================
+   📚 Book Cards
+========================= */
+.book-card {
+    border-radius: 18px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .book-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(255, 182, 193, 0.4);
+    }
+
+.book-img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.book-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #d63384;
+}
+
+.book-desc {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.book-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.book-badge {
+    background-color: #f8a1b6;
+    color: white;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+}
+
+/* =========================
+   💬 Comments
+========================= */
+.comments-section {
+    margin-top: 80px;
+    padding: 30px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.2);
+}
+
+    .comments-section textarea {
+        width: 100%;
+        min-height: 100px;
+        border-radius: 20px;
+        padding: 15px;
+        border: 1px solid #f1c6d9;
+        resize: none;
+    }
+
+.comment {
+    background: #fff5f9;
+    padding: 15px 20px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 20px rgba(214, 51, 132, 0.15);
+}
+.visitor-counter p {
+    font-size: 1.1rem;
+    color: #c94f7c;
+    font-style: italic;
+}
+.comments-section {
+    margin-top: 80px;
+    padding: 30px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.2);
+}
+
+    .comments-section textarea {
+        width: 100%;
+        min-height: 100px;
+        border-radius: 20px;
+        padding: 15px;
+        border: 1px solid #f1c6d9;
+        resize: none;
+    }
+
+.comment {
+    background: #fff5f9;
+    padding: 15px 20px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 20px rgba(214, 51, 132, 0.15);
+}

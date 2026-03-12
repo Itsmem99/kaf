@@ -1,0 +1,32 @@
+﻿@page
+@model kaf.Pages.ErrorModel
+
+}
+
+<div class="container text-center my-5">
+    <div class="error-card mx-auto">
+
+        <h1 class="error-title">😔 عذراً</h1>
+        <h4 class="error-subtitle">
+            حدث خطأ غير متوقع أثناء معالجة طلبك
+        </h4>
+
+        @if (Model.ShowRequestId)
+        {
+            <p class="error-id">
+                <strong>رقم الطلب:</strong>
+                <code>@Model.RequestId</code>
+            </p>
+        }
+
+        <a asp-page="/Index" class="btn btn-pink mt-3">
+            العودة للرئيسية 🌸
+        </a>
+
+        <hr class="my-4" />
+
+        <p class="text-muted small">
+            إذا استمر الخطأ، يرجى التواصل معنا
+        </p>
+    </div>
+</div>

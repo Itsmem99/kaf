@@ -1,0 +1,131 @@
+﻿@page
+@model kaf.Pages.IndexModel
+
+<!-- 🤖 Robot Hero -->
+<div class="robot-section">
+    <div class="ai-hero">
+
+        <!-- 🤖 Robot -->
+        <div class="robot-head">
+            <div class="robot-eye left"></div>
+            <div class="robot-eye right"></div>
+            <div class="robot-mouth"></div>
+            <div class="robot-glow"></div>
+        </div>
+
+        <!-- 🫧 Quote Bubble (تطلع من الفم) -->
+        <div id="quoteBubble" class="quote-bubble">
+            <p id="dailyQuote"></p>
+        </div>
+
+        <!-- 🧠 AI Text -->
+        <h1 class="ai-title"></h1>
+        <p class="ai-subtitle">موقع كاف لكتب تشع من تأليف مها خليفه</p>
+
+    </div>
+</div>
+
+<!-- 📚 Books Section -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+
+            <a asp-page="/Books/Details" class="btn btn-pink mt-3">
+                استكشف الكتب 📚
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<!-- 🧮 Visitor Counter -->
+<div class="visitor-counter text-center my-5">
+    <p id="visitorText"></p>
+</div>
+
+<!-- 💬 Comments Section -->
+<div class="container my-5">
+    <div class="comments-section">
+
+        <h4 class="mb-3">💬 كلمات الزوّار</h4>
+
+        <textarea id="commentInput" placeholder="اكتب جملة… واتركها هنا 🤍"></textarea>
+
+        <div class="text-end mt-2">
+            <button class="btn btn-pink" onclick="addComment()">أرسل</button>
+        </div>
+
+        <p class="mt-3 text-muted">
+            عدد الكلمات: <span id="commentCount">0</span>
+        </p>
+
+        <div id="commentsList"></div>
+
+    </div>
+</div>
+
+@section Scripts {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* 🫧 Quote from Robot Mouth */
+    const quotes = [
+        "أنت أقوى مما تظن 🌸",
+        "خذ نفسًا… أنت بخير 🤍",
+        "وجودك بحد ذاته إنجاز ✨",
+        "اليوم ألطف مما تتوقع 🌷",
+        "لا بأس أن تتأخر قليلًا 🌙"
+    ];
+
+    const bubble = document.getElementById("quoteBubble");
+    const text = document.getElementById("dailyQuote");
+
+    if (bubble && text) {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        text.innerText = randomQuote;
+
+        setTimeout(() => {
+            bubble.classList.add("show");
+        }, 700);
+    }
+
+    /* 🧮 Visitor Counter */
+    let visits = localStorage.getItem("kaf_visits");
+
+    if (!visits) {
+        visits = 1;
+    } else {
+        visits = parseInt(visits) + 1;
+    }
+
+    localStorage.setItem("kaf_visits", visits);
+
+    const visitorText = document.getElementById("visitorText");
+    if (visitorText) {
+        visitorText.innerText = `مرّ من هنا ${visits} قلبًا 🤍`;
+    }
+});
+
+/* 💬 Comments */
+let commentCount = 0;
+
+function addComment() {
+    const input = document.getElementById("commentInput");
+    const list = document.getElementById("commentsList");
+    const count = document.getElementById("commentCount");
+
+    if (input.value.trim() === "") return;
+
+    const div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = input.value;
+
+    list.prepend(div);
+
+    commentCount++;
+    count.innerText = commentCount;
+
+    input.value = "";
+}
+</script>
+}

@@ -1,0 +1,15 @@
+﻿@page
+@model kaf.Pages.ReadByFeelingModel
+@{
+}
+<div class="text-center mb-4">
+    <button class="btn btn-outline-pink" onclick="showMood('sad')">😔 حزين</button>
+    <button class="btn btn-outline-pink" onclick="showMood('lost')">😵‍💫 مشتّت</button>
+    <button class="btn btn-outline-pink" onclick="showMood('miss')">💔 مشتاق</button>
+    <button class="btn btn-outline-pink" onclick="showMood('strong')">💪 قوي</button>
+</div>
+
+<div id="moodResult" class="text-center" style="display:none;">
+    <h4 id="moodBook"></h4>
+    <p id="moodQuote"></p>
+</div>
